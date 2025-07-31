@@ -10,6 +10,7 @@
   import { onMount } from "svelte";
   import Button from "../../components/Button/Button.svelte";
   import copyicon from "../../assets/icons/copy.png";
+  import { goto } from "$app/navigation";
 
   let platforms = [
     { name: "Twitter", logo: Twitter },
@@ -28,7 +29,7 @@
   // Check if user has token, if not redirect to login
   let token = data.token;
   if (!token) {
-    redirect(302, "/login");
+    goto("/login")
   }
 
   let eventData = data.eventData;
@@ -127,7 +128,7 @@
     <Toast class="!p-1 !bg-green-100 !text-green-700 !text-xs shadow-md rounded-md">
       <div class="flex items-center space-x-2">
         <svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" class=" hidden md:block" />
         </svg>
         <span>{toastMessage}</span>
       </div>

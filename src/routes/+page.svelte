@@ -1,9 +1,19 @@
 <script>
+  import { goto } from '$app/navigation';
+
+  export let data;
+  if(data.token) {
+    goto('/marketing');
+  } else {
+    goto('/login');
+  }
+  console.log("Page data:", data);
 </script>
 
 <svelte:head>
   <title>MicDrop</title>
   <meta name="description" content="SvelteKit demo app" />
+  l
 </svelte:head>
 
 <div class="flex items-center justify-center h-screen bg-white">
