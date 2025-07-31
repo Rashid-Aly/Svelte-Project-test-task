@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+p {
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-theme-1);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+
+/* Example: thick scrollbar */
+.thick-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thick-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thick-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* Tailwind gray-300 */
+  border-radius: 4px;
+}
